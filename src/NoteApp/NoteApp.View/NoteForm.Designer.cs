@@ -187,6 +187,7 @@ namespace NoteApp.View
             this.Controls.Add(this.NoteAppButton2);
             this.Controls.Add(this.NoteAppButton1);
             this.Name = "NoteForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add/Edit Note";
             this.ResumeLayout(false);

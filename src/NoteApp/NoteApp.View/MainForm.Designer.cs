@@ -106,7 +106,7 @@ namespace NoteApp.View
             this.NoteAppListBox1.ItemHeight = 16;
             this.NoteAppListBox1.Location = new System.Drawing.Point(10, 43);
             this.NoteAppListBox1.Name = "NoteAppListBox1";
-            this.NoteAppListBox1.Size = new System.Drawing.Size(301, 468);
+            this.NoteAppListBox1.Size = new System.Drawing.Size(305, 468);
             this.NoteAppListBox1.TabIndex = 0;
             // 
             // NoteAppMenuStrip1
@@ -188,9 +188,9 @@ namespace NoteApp.View
             this.NoteAppButton3.BackgroundImage = global::NoteApp.View.Properties.Resources.delete_file_icon_icons_com_71692__1_;
             this.NoteAppButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.NoteAppButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NoteAppButton3.Location = new System.Drawing.Point(106, 517);
+            this.NoteAppButton3.Location = new System.Drawing.Point(139, 517);
             this.NoteAppButton3.Name = "NoteAppButton3";
-            this.NoteAppButton3.Size = new System.Drawing.Size(38, 48);
+            this.NoteAppButton3.Size = new System.Drawing.Size(46, 48);
             this.NoteAppButton3.TabIndex = 5;
             this.NoteAppButton3.UseVisualStyleBackColor = true;
             this.NoteAppButton3.Click += new System.EventHandler(this.NoteAppButton3_Click);
@@ -203,9 +203,9 @@ namespace NoteApp.View
             this.NoteAppButton2.BackgroundImage = global::NoteApp.View.Properties.Resources.file_document_edit_outline_icon_139608;
             this.NoteAppButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.NoteAppButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NoteAppButton2.Location = new System.Drawing.Point(58, 517);
+            this.NoteAppButton2.Location = new System.Drawing.Point(75, 517);
             this.NoteAppButton2.Name = "NoteAppButton2";
-            this.NoteAppButton2.Size = new System.Drawing.Size(38, 48);
+            this.NoteAppButton2.Size = new System.Drawing.Size(46, 48);
             this.NoteAppButton2.TabIndex = 4;
             this.NoteAppButton2.UseVisualStyleBackColor = true;
             this.NoteAppButton2.Click += new System.EventHandler(this.NoteAppButton2_Click);
@@ -220,7 +220,7 @@ namespace NoteApp.View
             this.NoteAppButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NoteAppButton1.Location = new System.Drawing.Point(11, 517);
             this.NoteAppButton1.Name = "NoteAppButton1";
-            this.NoteAppButton1.Size = new System.Drawing.Size(38, 48);
+            this.NoteAppButton1.Size = new System.Drawing.Size(46, 48);
             this.NoteAppButton1.TabIndex = 3;
             this.NoteAppButton1.UseVisualStyleBackColor = true;
             this.NoteAppButton1.Click += new System.EventHandler(this.NoteAppButton1_Click);
