@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
-// связанных со сборкой.
+// связанные со сборкой.
 [assembly: AssemblyTitle("NoteApp.Model")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
@@ -16,11 +16,11 @@ using System.Runtime.InteropServices;
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
 // для компонентов COM. Если необходимо обратиться к типу в этой сборке через
-// COM, следует установить атрибут ComVisible в TRUE для этого типа.
+// COM, задайте атрибуту ComVisible значение TRUE для этого типа.
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("777f0fe6-0df5-4bb7-b35f-dedf7e2311a9")]
+[assembly: Guid("4e773cc8-5e3b-41ed-80c8-1cb8e7d46a3e")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

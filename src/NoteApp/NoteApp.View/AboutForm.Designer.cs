@@ -142,7 +142,7 @@ namespace NoteApp.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 398);
+            this.ClientSize = new System.Drawing.Size(455, 407);
             this.Controls.Add(this.NoteAppLinkLabel2);
             this.Controls.Add(this.NoteAppLinkLabel1);
             this.Controls.Add(this.NoteAppLabel6);
@@ -154,7 +154,7 @@ namespace NoteApp.View
             this.Name = "AboutForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AboutForm";
+            this.Text = "About";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,7 +29,7 @@ namespace NoteApp.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NoteAppTextBox2 = new System.Windows.Forms.TextBox();
             this.NoteAppTextBox1 = new System.Windows.Forms.TextBox();
             this.NoteAppComboBox1 = new System.Windows.Forms.ComboBox();
             this.NoteAppDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -40,66 +40,52 @@ namespace NoteApp.View
             this.NoteAppLabel1 = new System.Windows.Forms.Label();
             this.NoteAppButton2 = new System.Windows.Forms.Button();
             this.NoteAppButton1 = new System.Windows.Forms.Button();
+            this.NoteAppSaveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
-            // textBox1
+            // NoteAppTextBox2
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.NoteAppTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(26, 102);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(842, 435);
-            this.textBox1.TabIndex = 21;
+            this.NoteAppTextBox2.Location = new System.Drawing.Point(26, 102);
+            this.NoteAppTextBox2.Multiline = true;
+            this.NoteAppTextBox2.Name = "NoteAppTextBox2";
+            this.NoteAppTextBox2.Size = new System.Drawing.Size(741, 411);
+            this.NoteAppTextBox2.TabIndex = 21;
             // 
             // NoteAppTextBox1
             // 
-            this.NoteAppTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.NoteAppTextBox1.Location = new System.Drawing.Point(74, 10);
             this.NoteAppTextBox1.Name = "NoteAppTextBox1";
-            this.NoteAppTextBox1.Size = new System.Drawing.Size(272, 22);
+            this.NoteAppTextBox1.Size = new System.Drawing.Size(286, 22);
             this.NoteAppTextBox1.TabIndex = 20;
             // 
             // NoteAppComboBox1
             // 
-            this.NoteAppComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.NoteAppComboBox1.FormattingEnabled = true;
             this.NoteAppComboBox1.Location = new System.Drawing.Point(104, 41);
             this.NoteAppComboBox1.Name = "NoteAppComboBox1";
-            this.NoteAppComboBox1.Size = new System.Drawing.Size(147, 24);
+            this.NoteAppComboBox1.Size = new System.Drawing.Size(161, 24);
             this.NoteAppComboBox1.TabIndex = 19;
             // 
             // NoteAppDateTimePicker2
             // 
-            this.NoteAppDateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.NoteAppDateTimePicker2.Location = new System.Drawing.Point(327, 71);
             this.NoteAppDateTimePicker2.Name = "NoteAppDateTimePicker2";
-            this.NoteAppDateTimePicker2.Size = new System.Drawing.Size(155, 22);
+            this.NoteAppDateTimePicker2.Size = new System.Drawing.Size(158, 22);
             this.NoteAppDateTimePicker2.TabIndex = 18;
             // 
             // NoteAppDateTimePicker1
             // 
-            this.NoteAppDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.NoteAppDateTimePicker1.Location = new System.Drawing.Point(97, 71);
             this.NoteAppDateTimePicker1.Name = "NoteAppDateTimePicker1";
-            this.NoteAppDateTimePicker1.Size = new System.Drawing.Size(154, 22);
+            this.NoteAppDateTimePicker1.Size = new System.Drawing.Size(157, 22);
             this.NoteAppDateTimePicker1.TabIndex = 17;
             // 
             // NoteAppLabel4
             // 
             this.NoteAppLabel4.AllowDrop = true;
-            this.NoteAppLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.NoteAppLabel4.AutoSize = true;
             this.NoteAppLabel4.Location = new System.Drawing.Point(256, 76);
             this.NoteAppLabel4.Name = "NoteAppLabel4";
@@ -109,9 +95,6 @@ namespace NoteApp.View
             // 
             // NoteAppLabel3
             // 
-            this.NoteAppLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.NoteAppLabel3.AutoSize = true;
             this.NoteAppLabel3.Location = new System.Drawing.Point(29, 71);
             this.NoteAppLabel3.Name = "NoteAppLabel3";
@@ -145,10 +128,8 @@ namespace NoteApp.View
             // 
             // NoteAppButton2
             // 
-            this.NoteAppButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.NoteAppButton2.Location = new System.Drawing.Point(751, 548);
+            this.NoteAppButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.NoteAppButton2.Location = new System.Drawing.Point(650, 524);
             this.NoteAppButton2.Name = "NoteAppButton2";
             this.NoteAppButton2.Size = new System.Drawing.Size(127, 33);
             this.NoteAppButton2.TabIndex = 12;
@@ -158,11 +139,9 @@ namespace NoteApp.View
             // 
             // NoteAppButton1
             // 
-            this.NoteAppButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NoteAppButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.NoteAppButton1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.NoteAppButton1.Location = new System.Drawing.Point(607, 548);
+            this.NoteAppButton1.Location = new System.Drawing.Point(506, 524);
             this.NoteAppButton1.Name = "NoteAppButton1";
             this.NoteAppButton1.Size = new System.Drawing.Size(127, 33);
             this.NoteAppButton1.TabIndex = 11;
@@ -174,8 +153,8 @@ namespace NoteApp.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 590);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(803, 566);
+            this.Controls.Add(this.NoteAppTextBox2);
             this.Controls.Add(this.NoteAppTextBox1);
             this.Controls.Add(this.NoteAppComboBox1);
             this.Controls.Add(this.NoteAppDateTimePicker2);
@@ -197,7 +176,7 @@ namespace NoteApp.View
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NoteAppTextBox2;
         private System.Windows.Forms.TextBox NoteAppTextBox1;
         private System.Windows.Forms.ComboBox NoteAppComboBox1;
         private System.Windows.Forms.DateTimePicker NoteAppDateTimePicker2;
@@ -208,5 +187,6 @@ namespace NoteApp.View
         private System.Windows.Forms.Label NoteAppLabel1;
         private System.Windows.Forms.Button NoteAppButton2;
         private System.Windows.Forms.Button NoteAppButton1;
+        private System.Windows.Forms.SaveFileDialog NoteAppSaveFileDialog1;
     }
 }
