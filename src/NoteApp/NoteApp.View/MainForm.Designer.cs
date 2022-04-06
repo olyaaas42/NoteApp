@@ -37,6 +37,8 @@ namespace NoteApp.View
             this.NoteAppLabel1 = new System.Windows.Forms.Label();
             this.NoteAppComboBox1 = new System.Windows.Forms.ComboBox();
             this.NoteAppListBox1 = new System.Windows.Forms.ListBox();
+            this.NoteAppTextBox3 = new System.Windows.Forms.TextBox();
+            this.NoteAppDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.NoteAppDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.NoteAppLabel4 = new System.Windows.Forms.Label();
             this.NoteAppLabel3 = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@ namespace NoteApp.View
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NoteAppOpenFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.NoteAppDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.NoteAppTextBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.NoteAppSplitContainer1)).BeginInit();
             this.NoteAppSplitContainer1.Panel1.SuspendLayout();
             this.NoteAppSplitContainer1.Panel2.SuspendLayout();
@@ -72,7 +72,7 @@ namespace NoteApp.View
             // 
             // NoteAppSplitContainer1.Panel1
             // 
-            this.NoteAppSplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.NoteAppSplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.NoteAppSplitContainer1.Panel1.Controls.Add(this.NoteAppButton3);
             this.NoteAppSplitContainer1.Panel1.Controls.Add(this.NoteAppButton2);
             this.NoteAppSplitContainer1.Panel1.Controls.Add(this.NoteAppButton1);
@@ -82,7 +82,7 @@ namespace NoteApp.View
             // 
             // NoteAppSplitContainer1.Panel2
             // 
-            this.NoteAppSplitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.NoteAppSplitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.NoteAppSplitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.NoteAppSplitContainer1.Panel2.Controls.Add(this.NoteAppTextBox3);
             this.NoteAppSplitContainer1.Panel2.Controls.Add(this.NoteAppDateTimePicker2);
@@ -93,8 +93,8 @@ namespace NoteApp.View
             this.NoteAppSplitContainer1.Panel2.Controls.Add(this.textBox1);
             this.NoteAppSplitContainer1.Panel2.Controls.Add(this.NoteAppTextBox1);
             this.NoteAppSplitContainer1.Panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.NoteAppSplitContainer1.Size = new System.Drawing.Size(892, 537);
-            this.NoteAppSplitContainer1.SplitterDistance = 298;
+            this.NoteAppSplitContainer1.Size = new System.Drawing.Size(879, 499);
+            this.NoteAppSplitContainer1.SplitterDistance = 294;
             this.NoteAppSplitContainer1.TabIndex = 5;
             // 
             // NoteAppButton3
@@ -103,7 +103,7 @@ namespace NoteApp.View
             this.NoteAppButton3.BackgroundImage = global::NoteApp.View.Properties.Resources.delete_file_icon_icons_com_71692__1_;
             this.NoteAppButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.NoteAppButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NoteAppButton3.Location = new System.Drawing.Point(129, 484);
+            this.NoteAppButton3.Location = new System.Drawing.Point(112, 446);
             this.NoteAppButton3.Name = "NoteAppButton3";
             this.NoteAppButton3.Size = new System.Drawing.Size(46, 50);
             this.NoteAppButton3.TabIndex = 5;
@@ -116,7 +116,7 @@ namespace NoteApp.View
             this.NoteAppButton2.BackgroundImage = global::NoteApp.View.Properties.Resources.file_document_edit_outline_icon_139608;
             this.NoteAppButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.NoteAppButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NoteAppButton2.Location = new System.Drawing.Point(71, 485);
+            this.NoteAppButton2.Location = new System.Drawing.Point(60, 447);
             this.NoteAppButton2.Name = "NoteAppButton2";
             this.NoteAppButton2.Size = new System.Drawing.Size(46, 48);
             this.NoteAppButton2.TabIndex = 4;
@@ -129,9 +129,9 @@ namespace NoteApp.View
             this.NoteAppButton1.BackgroundImage = global::NoteApp.View.Properties.Resources.Add_File_icon_icons_com_55973;
             this.NoteAppButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.NoteAppButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NoteAppButton1.Location = new System.Drawing.Point(11, 485);
+            this.NoteAppButton1.Location = new System.Drawing.Point(11, 447);
             this.NoteAppButton1.Name = "NoteAppButton1";
-            this.NoteAppButton1.Size = new System.Drawing.Size(46, 48);
+            this.NoteAppButton1.Size = new System.Drawing.Size(43, 48);
             this.NoteAppButton1.TabIndex = 3;
             this.NoteAppButton1.UseVisualStyleBackColor = true;
             this.NoteAppButton1.Click += new System.EventHandler(this.NoteAppButton1_Click);
@@ -139,7 +139,7 @@ namespace NoteApp.View
             // NoteAppLabel1
             // 
             this.NoteAppLabel1.AutoSize = true;
-            this.NoteAppLabel1.Location = new System.Drawing.Point(10, 16);
+            this.NoteAppLabel1.Location = new System.Drawing.Point(10, 11);
             this.NoteAppLabel1.Name = "NoteAppLabel1";
             this.NoteAppLabel1.Size = new System.Drawing.Size(107, 17);
             this.NoteAppLabel1.TabIndex = 2;
@@ -151,9 +151,9 @@ namespace NoteApp.View
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NoteAppComboBox1.FormattingEnabled = true;
-            this.NoteAppComboBox1.Location = new System.Drawing.Point(129, 13);
+            this.NoteAppComboBox1.Location = new System.Drawing.Point(123, 8);
             this.NoteAppComboBox1.Name = "NoteAppComboBox1";
-            this.NoteAppComboBox1.Size = new System.Drawing.Size(126, 24);
+            this.NoteAppComboBox1.Size = new System.Drawing.Size(122, 24);
             this.NoteAppComboBox1.TabIndex = 1;
             // 
             // NoteAppListBox1
@@ -162,24 +162,41 @@ namespace NoteApp.View
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NoteAppListBox1.FormattingEnabled = true;
+            this.NoteAppListBox1.IntegralHeight = false;
             this.NoteAppListBox1.ItemHeight = 16;
-            this.NoteAppListBox1.Location = new System.Drawing.Point(13, 43);
+            this.NoteAppListBox1.Location = new System.Drawing.Point(7, 38);
             this.NoteAppListBox1.Name = "NoteAppListBox1";
-            this.NoteAppListBox1.Size = new System.Drawing.Size(278, 404);
+            this.NoteAppListBox1.Size = new System.Drawing.Size(284, 403);
             this.NoteAppListBox1.TabIndex = 0;
             this.NoteAppListBox1.SelectedIndexChanged += new System.EventHandler(this.NoteAppListBox1_SelectedIndexChanged);
             // 
+            // NoteAppTextBox3
+            // 
+            this.NoteAppTextBox3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.NoteAppTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NoteAppTextBox3.Location = new System.Drawing.Point(78, 43);
+            this.NoteAppTextBox3.Name = "NoteAppTextBox3";
+            this.NoteAppTextBox3.Size = new System.Drawing.Size(144, 15);
+            this.NoteAppTextBox3.TabIndex = 7;
+            // 
+            // NoteAppDateTimePicker2
+            // 
+            this.NoteAppDateTimePicker2.Location = new System.Drawing.Point(315, 71);
+            this.NoteAppDateTimePicker2.Name = "NoteAppDateTimePicker2";
+            this.NoteAppDateTimePicker2.Size = new System.Drawing.Size(166, 22);
+            this.NoteAppDateTimePicker2.TabIndex = 6;
+            // 
             // NoteAppDateTimePicker1
             // 
-            this.NoteAppDateTimePicker1.Location = new System.Drawing.Point(96, 104);
+            this.NoteAppDateTimePicker1.Location = new System.Drawing.Point(78, 71);
             this.NoteAppDateTimePicker1.Name = "NoteAppDateTimePicker1";
-            this.NoteAppDateTimePicker1.Size = new System.Drawing.Size(147, 22);
+            this.NoteAppDateTimePicker1.Size = new System.Drawing.Size(151, 22);
             this.NoteAppDateTimePicker1.TabIndex = 5;
             // 
             // NoteAppLabel4
             // 
             this.NoteAppLabel4.AutoSize = true;
-            this.NoteAppLabel4.Location = new System.Drawing.Point(260, 104);
+            this.NoteAppLabel4.Location = new System.Drawing.Point(244, 76);
             this.NoteAppLabel4.Name = "NoteAppLabel4";
             this.NoteAppLabel4.Size = new System.Drawing.Size(65, 17);
             this.NoteAppLabel4.TabIndex = 4;
@@ -188,7 +205,7 @@ namespace NoteApp.View
             // NoteAppLabel3
             // 
             this.NoteAppLabel3.AutoSize = true;
-            this.NoteAppLabel3.Location = new System.Drawing.Point(28, 104);
+            this.NoteAppLabel3.Location = new System.Drawing.Point(10, 76);
             this.NoteAppLabel3.Name = "NoteAppLabel3";
             this.NoteAppLabel3.Size = new System.Drawing.Size(62, 17);
             this.NoteAppLabel3.TabIndex = 3;
@@ -197,7 +214,7 @@ namespace NoteApp.View
             // NoteAppLabel2
             // 
             this.NoteAppLabel2.AutoSize = true;
-            this.NoteAppLabel2.Location = new System.Drawing.Point(28, 59);
+            this.NoteAppLabel2.Location = new System.Drawing.Point(10, 43);
             this.NoteAppLabel2.Name = "NoteAppLabel2";
             this.NoteAppLabel2.Size = new System.Drawing.Size(69, 17);
             this.NoteAppLabel2.TabIndex = 2;
@@ -205,9 +222,14 @@ namespace NoteApp.View
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 16);
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(13, 11);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(343, 22);
+            this.textBox1.Size = new System.Drawing.Size(334, 27);
             this.textBox1.TabIndex = 1;
             // 
             // NoteAppTextBox1
@@ -215,10 +237,11 @@ namespace NoteApp.View
             this.NoteAppTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NoteAppTextBox1.Location = new System.Drawing.Point(5, 153);
+            this.NoteAppTextBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.NoteAppTextBox1.Location = new System.Drawing.Point(5, 99);
             this.NoteAppTextBox1.Multiline = true;
             this.NoteAppTextBox1.Name = "NoteAppTextBox1";
-            this.NoteAppTextBox1.Size = new System.Drawing.Size(576, 374);
+            this.NoteAppTextBox1.Size = new System.Drawing.Size(567, 396);
             this.NoteAppTextBox1.TabIndex = 0;
             // 
             // NoteAppMenuStrip1
@@ -230,7 +253,7 @@ namespace NoteApp.View
             this.helpToolStripMenuItem});
             this.NoteAppMenuStrip1.Location = new System.Drawing.Point(0, 0);
             this.NoteAppMenuStrip1.Name = "NoteAppMenuStrip1";
-            this.NoteAppMenuStrip1.Size = new System.Drawing.Size(899, 28);
+            this.NoteAppMenuStrip1.Size = new System.Drawing.Size(886, 28);
             this.NoteAppMenuStrip1.TabIndex = 4;
             this.NoteAppMenuStrip1.Text = "menuStrip1";
             // 
@@ -299,28 +322,15 @@ namespace NoteApp.View
             // 
             this.NoteAppOpenFileDialog1.FileName = "openFileDialog1";
             // 
-            // NoteAppDateTimePicker2
-            // 
-            this.NoteAppDateTimePicker2.Location = new System.Drawing.Point(331, 104);
-            this.NoteAppDateTimePicker2.Name = "NoteAppDateTimePicker2";
-            this.NoteAppDateTimePicker2.Size = new System.Drawing.Size(162, 22);
-            this.NoteAppDateTimePicker2.TabIndex = 6;
-            // 
-            // NoteAppTextBox3
-            // 
-            this.NoteAppTextBox3.Location = new System.Drawing.Point(103, 59);
-            this.NoteAppTextBox3.Name = "NoteAppTextBox3";
-            this.NoteAppTextBox3.Size = new System.Drawing.Size(119, 22);
-            this.NoteAppTextBox3.TabIndex = 7;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 569);
+            this.ClientSize = new System.Drawing.Size(886, 531);
             this.Controls.Add(this.NoteAppSplitContainer1);
             this.Controls.Add(this.NoteAppMenuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NoteApp";
