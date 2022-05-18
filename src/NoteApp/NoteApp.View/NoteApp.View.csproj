@@ -107,5 +107,14 @@
   <ItemGroup>
     <None Include="Resources\delete-file_icon-icons.com_71692 %281%29.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-add_114479.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-edit_114433.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-delete_114438.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -83,9 +83,39 @@ namespace NoteApp.View.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap file_add_114479 {
+            get {
+                object obj = ResourceManager.GetObject("file-add_114479", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_delete_114438 {
+            get {
+                object obj = ResourceManager.GetObject("file-delete_114438", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap file_document_edit_outline_icon_139608 {
             get {
                 object obj = ResourceManager.GetObject("file_document_edit_outline_icon_139608", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_edit_114433 {
+            get {
+                object obj = ResourceManager.GetObject("file-edit_114433", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

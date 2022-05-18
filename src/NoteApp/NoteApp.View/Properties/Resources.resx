@@ -118,13 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="file_document_edit_outline_icon_139608" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\file_document_edit_outline_icon_139608.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="file-edit_114433" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file-edit_114433.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete-file_icon-icons.com_71692 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete-file_icon-icons.com_71692 (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Add_File_icon-icons.com_55973" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add_File_icon-icons.com_55973.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete-file_icon-icons.com_71692 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete-file_icon-icons.com_71692 (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="file-add_114479" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file-add_114479.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file_document_edit_outline_icon_139608" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file_document_edit_outline_icon_139608.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file-delete_114438" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file-delete_114438.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
