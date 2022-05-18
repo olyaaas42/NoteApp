@@ -48,7 +48,7 @@ namespace NoteApp.View
         
         public void CreateNewDocument(object sender, EventArgs e)
         {
-            NoteAppTextBox2.Text = "";
+            NoteTextBox2.Text = "";
             filename = "";
             category = "";
         }
@@ -59,14 +59,14 @@ namespace NoteApp.View
             {
                 if (NoteAppSaveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    _filename = NoteAppTextBox1.Text;
+                    _filename = TitleTextBox1.Text;
                 }
             }
             if (_category == "")
             {
                 if (NoteAppSaveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    _category = NoteAppComboBox1.Text;
+                    _category = CategoryComboBox1.Text;
                 }
             }
 
@@ -84,5 +84,9 @@ namespace NoteApp.View
             }
         }
 
+        private void CategoryComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

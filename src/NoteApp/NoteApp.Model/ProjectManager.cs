@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace NoteApp.Model
 {
-    public class Class1
+    class ProjectManager
     {
+
     }
+
+
 }

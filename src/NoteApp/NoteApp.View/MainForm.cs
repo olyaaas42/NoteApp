@@ -47,9 +47,9 @@ namespace NoteApp.View
             {
                 MessageBox.Show("Файл с таким названием уже существует");
             }
-            if (!NoteAppComboBox1.Items.Contains(category))
+            if (!CategoryComboBox1.Items.Contains(category))
             {
-                NoteAppComboBox1.Items.Add(category);
+                CategoryComboBox1.Items.Add(category);
             }
         }
 
@@ -102,9 +102,9 @@ namespace NoteApp.View
             {
                 MessageBox.Show("Файл с таким названием уже существует");
             }
-            if (!NoteAppComboBox1.Items.Contains(category))
+            if (!CategoryComboBox1.Items.Contains(category))
             {
-                NoteAppComboBox1.Items.Add(category);
+                CategoryComboBox1.Items.Add(category);
             }
         }
 
@@ -118,7 +118,7 @@ namespace NoteApp.View
 
             // Добавить файл в listBox
             NoteAppListBox1.Items.Add(filename);
-            NoteAppComboBox1.Items.Add(category);
+            CategoryComboBox1.Items.Add(category);
         }
 
         //remove note
@@ -126,7 +126,15 @@ namespace NoteApp.View
         {
             int index;
             index = NoteAppListBox1.SelectedIndex;
-            NoteAppListBox1.Items.RemoveAt(index);
+            if(index < 0)
+            {
+                MessageBox.Show("Нет заметок");
+            }
+            else
+            {
+                NoteAppListBox1.Items.RemoveAt(index);
+            }
+            
         }
 
         //вывод заметки
