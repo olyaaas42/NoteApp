@@ -37,13 +37,17 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// Добавление новой заметки через меню.
+        /// Добавление новой заметки через меню рандомно.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void addNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddNote();
+            Random random = new Random();
+            Note note = new Note();
+            note.Title = random.Next().ToString();
+            note.Text = random.Next().ToString();
+            _project.Notes.Add(note);
             UpdateListBox();
         }
 
@@ -54,7 +58,7 @@ namespace NoteApp.View
         /// <param name="e"></param>
         private void editNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RemoveNote(NoteAppListBox.SelectedIndex);
+            EditNote(NoteAppListBox.SelectedIndex);
             UpdateListBox();
         }
 
@@ -98,11 +102,12 @@ namespace NoteApp.View
         /// </summary>
         private void AddNote()
         {
-            Random random = new Random();
-            Note note = new Note();
-            note.Title = random.Next().ToString();
-            note.Text = random.Next().ToString();
-            _project.Notes.Add(note);
+            var noteForm = new NoteForm();
+            noteForm.ShowDialog();
+            if (noteForm.DialogResult == DialogResult.OK)
+            {
+                _project.Notes.Add(noteForm.Note);
+            }
         }
 
         /// <summary>
@@ -194,8 +199,32 @@ namespace NoteApp.View
         /// <param name="e"></param>
         private void EditButton_Click(object sender, EventArgs e)
         {
-            RemoveNote(NoteAppListBox.SelectedIndex);
+            EditNote(NoteAppListBox.SelectedIndex);
             UpdateListBox();
+        }
+
+        /// <summary>
+        /// Редактирование существующей заметки.
+        /// </summary>
+        private void EditNote(int index)
+        {
+            if (index == -1)
+            {
+                return;
+            }
+            int currentIndex = index;
+            NoteForm noteForm = new NoteForm();
+            noteForm.Note = _project.Notes[index];
+            noteForm.ShowDialog();
+            _project.Notes[index] = noteForm.Note;
+            if (noteForm.DialogResult == DialogResult.OK)
+            {
+                currentIndex = -1;
+            }
+            if ((NoteAppListBox.Items.Count != 0) && (currentIndex < NoteAppListBox.Items.Count))
+            {
+                NoteAppListBox.SelectedIndex = currentIndex;
+            }
         }
     }
 }

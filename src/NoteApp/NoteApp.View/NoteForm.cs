@@ -114,7 +114,7 @@ namespace NoteApp.View
         {
             if (_noteError != "")
             {
-                MessageBox.Show(_noteError);
+                ///MessageBox.Show(_noteError);
                 return false;
             }
             else
