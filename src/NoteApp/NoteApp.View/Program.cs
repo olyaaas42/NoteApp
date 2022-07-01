@@ -18,5 +18,6 @@ namespace NoteApp.View
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
+
     }
 }

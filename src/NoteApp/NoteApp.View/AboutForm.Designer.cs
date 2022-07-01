@@ -73,9 +73,9 @@ namespace NoteApp.View
             this.NoteAppLabel6.AutoSize = true;
             this.NoteAppLabel6.Location = new System.Drawing.Point(25, 362);
             this.NoteAppLabel6.Name = "NoteAppLabel6";
-            this.NoteAppLabel6.Size = new System.Drawing.Size(150, 17);
+            this.NoteAppLabel6.Size = new System.Drawing.Size(160, 17);
             this.NoteAppLabel6.TabIndex = 13;
-            this.NoteAppLabel6.Text = "2022 Olga Vysotskaya";
+            this.NoteAppLabel6.Text = "2022 Olga Vysotskaya©";
             // 
             // NoteAppLabel5
             // 
@@ -151,6 +151,7 @@ namespace NoteApp.View
             this.Controls.Add(this.NoteAppLabel3);
             this.Controls.Add(this.NoteAppLabel2);
             this.Controls.Add(this.NoteAppLabel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AboutForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
