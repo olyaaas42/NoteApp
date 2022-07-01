@@ -76,8 +76,8 @@ namespace NoteApp.View
         /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutForm form = new AboutForm();
-            form.ShowDialog();
+            AboutForm abourForm = new AboutForm();
+            abourForm.ShowDialog();
         }
 
 

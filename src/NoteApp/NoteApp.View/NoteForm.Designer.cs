@@ -74,7 +74,6 @@ namespace NoteApp.View
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(161, 24);
             this.CategoryComboBox.TabIndex = 19;
-            this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox1_SelectedIndexChanged);
             // 
             // ModifiedDateTimePicker
             // 
@@ -139,7 +138,7 @@ namespace NoteApp.View
             this.CancelButton.TabIndex = 12;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.NoteAppButton2_Click);
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // OKButton
             // 
@@ -151,7 +150,7 @@ namespace NoteApp.View
             this.OKButton.TabIndex = 11;
             this.OKButton.Text = "ОК";
             this.OKButton.UseVisualStyleBackColor = true;
-            this.OKButton.Click += new System.EventHandler(this.NoteAppButton1_Click);
+            this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
             // contextMenuStrip1
             // 
