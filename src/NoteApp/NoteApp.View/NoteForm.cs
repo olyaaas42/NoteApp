@@ -8,85 +8,146 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NoteApp.Model;
 
 namespace NoteApp.View
 {
     public partial class NoteForm : Form
     {
-        public string filename;
-        public string category;
-        public bool isFileChanged;
+        /// <summary>
+        /// Переменная заметки.
+        /// </summary>
+        private Note _note = new Note();
+
+        /// <summary>
+        /// Переменная заметки копирования.
+        /// </summary>
+        private Note _noteCopy = new Note();
+
+        /// <summary>
+        /// Строка для вывода ошибки.
+        /// </summary>
+        private string _noteError;
+
+        /// <summary>
+        /// Константа для корректного цвета. 
+        /// </summary>
+        private readonly Color _correctColor = Color.White;
+
+        /// <summary>
+        /// Константа для цвета ошибки.
+        /// </summary>
+        private readonly Color _errorColor = Color.LightPink;
 
         public NoteForm()
         {
             InitializeComponent();
-
-            Init();
         }
 
-        //button cancel
-        private void NoteAppButton2_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Задает и возвращает объект заметки.
+        /// </summary>
+        public Note Note
         {
-            this.Close();
-        }
-
-        //buttom ok
-        private void NoteAppButton1_Click(object sender, EventArgs e)
-        {
-            SaveFile(filename, category);
-
-            this.Close();
-        }
-
-        public void Init()
-        {
-            filename = "";
-            category = "";
-            isFileChanged = false;
-
-        }
-        
-        public void CreateNewDocument(object sender, EventArgs e)
-        {
-            NoteAppTextBox.Text = "";
-            filename = "";
-            category = "";
-        }
-
-        public void SaveFile(string _filename, string _category)
-        {
-            if (_filename == "" || _filename == filename)
+            get
             {
-                if (NoteAppSaveFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    _filename = TitleTextBox.Text;
-                }
+                return _note;
             }
-            if (_category == "")
+            set
             {
-                if (NoteAppSaveFileDialog1.ShowDialog() == DialogResult.OK)
+                _note = value;
+                if (_note != null)
                 {
-                    _category = CategoryComboBox.Text;
+                    _noteCopy = (Note)_note.Clone();
                 }
+                else
+                {
+                    _noteCopy = new Note();
+                }
+                UpdateForm();
             }
+        }
 
+
+        /// <summary>
+        /// Метод обновления формы.
+        /// </summary>
+        private void UpdateForm()
+        {
+            TitleTextBox.Text = _noteCopy.Title;
+            CreatedDateTimePicker.Value = _noteCopy.CreateTime;
+            ModifiedDateTimePicker.Value = _noteCopy.ModifiedTime;
+            NoteAppTextBox.Text = _noteCopy.Text;
+        }
+
+        /// <summary>
+        /// Метод обновления заметки.
+        /// </summary>
+        private void UpdateNote()
+        {
+            _noteCopy.Title = TitleTextBox.Text;
+            _noteCopy.Text = NoteAppTextBox.Text;
+        }
+
+        /// <summary>
+        /// Метод обработки и валидации названия заметки.
+        /// </summary>
+        private void TitleTextBox_TextChanged(object sender, EventArgs e)
+        {
             try
             {
-                //StreamWriter sw = new StreamWriter(_filename);
-                //sw.Write(NoteAppTextBox2.Text);
-                filename = _filename;
-                isFileChanged = false;
-                category = _category;
+                _noteCopy.Title = TitleTextBox.Text;
+                TitleTextBox.BackColor = _correctColor;
+                _noteError = "";
             }
-            catch
+            catch (ArgumentException exception)
             {
-                MessageBox.Show("Невозможно сохранить файл");
+                TitleTextBox.BackColor = _errorColor;
+                _noteError = exception.Message;
             }
         }
 
-        private void CategoryComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Проверка на анличие ошибок в форме.
+        /// </summary>
+        private bool CheckFormOnErrors()
         {
+            if (_noteError != "")
+            {
+                MessageBox.Show(_noteError);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
+        /// <summary>
+        /// Завершение редактирования кнопкой OK.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OKButton_Click(object sender, EventArgs e)
+        {
+            if (CheckFormOnErrors())
+            {
+                UpdateNote();
+                _note = _noteCopy;
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
+        /// <summary>
+        /// Закрытие окна редактирования кнопкой cancel.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }
