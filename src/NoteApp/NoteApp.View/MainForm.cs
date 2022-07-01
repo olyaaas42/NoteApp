@@ -8,141 +8,194 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NoteApp.Model;
 
 namespace NoteApp.View
 {
     public partial class MainForm : Form
     {
-        NoteForm noteForm = new NoteForm();
-        AboutForm aboutForm = new AboutForm();
-        private string filename;
-        private string category;
+        /// <summary>
+        /// Поле для хранения объектов заметок.
+        /// </summary>
+        private Project _project;
 
         public MainForm()
         {
+            _project = new Project();
             InitializeComponent();
         }
 
-        //exit
+        /// <summary>
+        /// Выход из приложения.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Вы действительно хотите выйти?");
             this.Close();
         }
 
-        //open NoteForm Add/Edit add
+        /// <summary>
+        /// Добавление новой заметки через меню.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NoteForm noteForm1 = new NoteForm();
-            noteForm1.ShowDialog();
-
-            filename = noteForm1.filename;
-            category = noteForm1.category;
-
-            // Добавить файл в listBox
-            if (!NoteAppListBox1.Items.Contains(filename))
-            {
-                NoteAppListBox1.Items.Add(filename);
-            }
-            else
-            {
-                MessageBox.Show("Файл с таким названием уже существует");
-            }
-            if (!CategoryComboBox1.Items.Contains(category))
-            {
-                CategoryComboBox1.Items.Add(category);
-            }
+            AddNote();
+            UpdateListBox();
         }
 
-        //open NoteForm Add/Edit edit
+        /// <summary>
+        /// Редактирование заметки через меню.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void editNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            noteForm = (NoteForm)NoteAppListBox1.SelectedItem;
-
-            noteForm.ShowDialog();
-
-            filename = noteForm.filename;
-            category = noteForm.category;
-
-
-
-            // Добавить файл в listBox
-            //NoteAppListBox1.Items.Add(filename);
-            //NoteAppComboBox1.Items.Add(category);
+            RemoveNote(NoteAppListBox.SelectedIndex);
+            UpdateListBox();
         }
 
-        //remove note
+        /// <summary>
+        /// Удаление заметки.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void removeNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int index;
-            index = NoteAppListBox1.SelectedIndex;
-            NoteAppListBox1.Items.RemoveAt(index);
+            RemoveNote(NoteAppListBox.SelectedIndex);
+            UpdateListBox();
         }
 
-        //open AboutForm
+        /// <summary>
+        /// Открытие окна About.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            aboutForm.ShowDialog();
+            AboutForm form = new AboutForm();
+            form.ShowDialog();
         }
 
-        //open NoteForm Add/Edit add
-        private void NoteAppButton1_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Обновить список заметок.
+        /// </summary>
+        private void UpdateListBox()
         {
-            NoteForm noteForm1 = new NoteForm();
-            noteForm1.ShowDialog();
-
-            filename = noteForm1.filename;
-            category = noteForm1.category;
-
-            // Добавить файл в listBox
-            if(!NoteAppListBox1.Items.Contains(filename))
+            NoteAppListBox.Items.Clear();
+            foreach (Note note in _project.Notes)
             {
-                NoteAppListBox1.Items.Add(filename);
-            }
-            else
-            {
-                MessageBox.Show("Файл с таким названием уже существует");
-            }
-            if (!CategoryComboBox1.Items.Contains(category))
-            {
-                CategoryComboBox1.Items.Add(category);
+                NoteAppListBox.Items.Add(note.Title);
             }
         }
 
-        //open NoteForm Add/Edit edit
-        private void NoteAppButton2_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Добавление заметок.
+        /// </summary>
+        private void AddNote()
         {
-            noteForm.ShowDialog();
-
-            filename = noteForm.filename;
-            category = noteForm.category;
-
-            // Добавить файл в listBox
-            NoteAppListBox1.Items.Add(filename);
-            CategoryComboBox1.Items.Add(category);
+            Random random = new Random();
+            Note note = new Note();
+            note.Title = random.Next().ToString();
+            note.Text = random.Next().ToString();
+            _project.Notes.Add(note);
         }
 
-        //remove note
-        private void NoteAppButton3_Click_1(object sender, EventArgs e)
+        /// <summary>
+        /// Удаление заметки через кнопку.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RemoteButton_Click(object sender, EventArgs e)
         {
-            int index;
-            index = NoteAppListBox1.SelectedIndex;
-            if(index < 0)
-            {
-                MessageBox.Show("Нет заметок");
-            }
-            else
-            {
-                NoteAppListBox1.Items.RemoveAt(index);
-            }
-            
+            RemoveNote(NoteAppListBox.SelectedIndex);
+            UpdateListBox();
         }
 
-        //вывод заметки
-        private void NoteAppListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Добавление заметки через кнопку.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddButton_Click(object sender, EventArgs e)
         {
-            //Если ничего не выбрано выходим
-            if (NoteAppListBox1.SelectedIndex == -1) return;
+            AddNote();
+            UpdateListBox();
         }
 
+        /// <summary>
+        /// Удаление заметки.
+        /// </summary>
+        /// <param name="index"></param>
+        private void RemoveNote(int index)
+        {
+            if (index == -1)
+            {
+                MessageBox.Show("Нет заметок или заметка для удаления не выбрана");
+            }
+            DialogResult result = MessageBox.Show($"Вы действительно хотите удалить {NoteAppListBox.SelectedItem}?",
+                "", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                _project.Notes.RemoveAt(index);
+                NoteAppListBox.SelectedItem = null;
+            }
+            else return;
+        }
+
+        /// <summary>
+        /// Обновить поле описания заметки.
+        /// </summary>
+        /// <param name="index">Индекс заметки.</param>
+        private void UpdateSelectedNote(int index)
+        {
+            if (NoteAppListBox.SelectedIndex == -1)
+            {
+                ClearSelectedNote();
+                return;
+            }
+            NoteAppTextBox.Text = _project.Notes[index].Text;
+            TitleNoteTextBox.Text = _project.Notes[index].Title;
+            CreatedDateTimePicker.Value = _project.Notes[index].CreateTime;
+            ModifiedDateTimePicker.Value = _project.Notes[index].ModifiedTime;
+            TextLabel.Text = _project.Notes[index].Category.ToString();
+        }
+
+        /// <summary>
+        /// Обработчик изменения выбранной заметки.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NoteAppListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateSelectedNote(NoteAppListBox.SelectedIndex);
+        }
+
+        /// <summary>
+        /// Очистить поле описания заметки.
+        /// </summary>
+        private void ClearSelectedNote()
+        {
+            NoteAppTextBox.Text = string.Empty;
+            TitleNoteTextBox.Text = string.Empty;
+            CreatedDateTimePicker.Value = DateTime.Now;
+            ModifiedDateTimePicker.Value = DateTime.Now;
+            TextLabel.Text = string.Empty;
+        }
+
+        /// <summary>
+        /// Редактирование заметки через кнопку.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            RemoveNote(NoteAppListBox.SelectedIndex);
+            UpdateListBox();
+        }
     }
 }

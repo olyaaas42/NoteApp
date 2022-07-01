@@ -9,32 +9,42 @@ namespace NoteApp.Model
     // <summary> 
     /// Описывает заметку
     /// </summary> 
-    public class Note
+    public class Note : ICloneable
     {
         /// <summary>
         /// Название заметки. Ограничено 50 символами.
         /// </summary>
-        private string _title { get; set; }
+        private string _title;
 
         /// <summary>
-        /// Категория заметки
+        /// Категория заметки.
         /// </summary>
-        private enum CategoryNote { }
+        public NoteCategory Category { get; set; }
 
         /// <summary>
-        /// Teкст заметки
+        /// Teкст заметки.
         /// </summary>
-        private string _textNote { get; set; }
+        private string _text;
 
         /// <summary>
         /// Дата создания заметки. Не меняется. Доступна для чтения.
         /// </summary>
-        private DateTime _dateCreated { get; }
+        public DateTime CreateTime { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Дата изменения заметки. Меняется при редактировании.
         /// </summary>
-        private DateTime _dateModified { get; set; }
+        public DateTime ModifiedTime { get; set; }
+
+        /// <summary>
+        /// Ограничение длины названия.
+        /// </summary>
+        private const int NOTETITLELIMIT = 50;
+
+        /// <summary>
+        /// Название по умолчанию.
+        /// </summary>
+        private const string DEFAULTTITLE = "Без Названия";
 
         /// <summary> 
         /// Возвращает или задает название заметки. 
@@ -47,63 +57,48 @@ namespace NoteApp.Model
             }
             set
             {
-                if(_title.Length > 50)
+                if (value.Length > NOTETITLELIMIT)
                 {
-                    throw new ArgumentException($"Название должно быть меньше 50 символов.");
+                    throw new ArgumentException("Max title length = 50");
                 }
+                if (value == string.Empty)
+                {
+                    _title = DEFAULTTITLE;
+                }
+
                 _title = value;
+                ModifiedTime = DateTime.Now;
             }
         }
 
         /// <summary> 
         /// Возвращает или задает текст заметки. 
         /// </summary> 
-        public string TextNote
+        public string Text
         {
             get
             {
-                return _textNote;
+                return _text;
             }
             set
             {
-                _textNote = value;
+                _text = value;
+                ModifiedTime = DateTime.Now;
             }
         }
 
-        /// <summary> 
-        /// Возвращает или задает дату изменения заметки. 
-        /// </summary> 
-        public DateTime DataModified
+        /// <summary>
+        /// Копирования объекта, интерфейс ICloneable
+        /// </summary>
+        public object Clone()
         {
-            get
-            {
-                return _dateModified;
-            }
-            set
-            {
-                _dateModified = value;
-            }
-        }
-
-        /// <summary> 
-        /// Возвращает дату создания заметки. 
-        /// </summary> 
-        public DateTime DataCreated
-        {
-            get
-            {
-                return _dateCreated;
-            }
-        }
-
-        /// <summary> 
-        /// Создает экземпляр <see cref="Note">. 
-        /// </summary> 
-        public Note(string title, string textNote, DateTime dateModified)
-        {
-            Title = title;
-            TextNote = textNote;
-            DataModified = dateModified;
+            Note note = new Note();
+            note.Title = this.Title;
+            note.Text = this.Text;
+            note.Category = this.Category;
+            note.CreateTime = this.CreateTime;
+            note.ModifiedTime = this.ModifiedTime;
+            return note;
         }
     };
 
