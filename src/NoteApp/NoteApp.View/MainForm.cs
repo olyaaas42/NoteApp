@@ -33,6 +33,7 @@ namespace NoteApp.View
         {
             InitializeComponent();
             _project = new Project();
+            _project = ProjectSerializer.LoadFromFile();
             _currentNotes = _project.Notes;
             CategoryComboBox.SelectedIndex = 0;
             ClearSelectedNote();
@@ -52,6 +53,7 @@ namespace NoteApp.View
                 OutputByCategory();
                 UpdateListBox();
                 NoteAppListBox.SelectedIndex = -1;
+                ProjectSerializer.SaveToFile(_project);
             }
         }
 
@@ -77,6 +79,7 @@ namespace NoteApp.View
                 OutputByCategory();
                 UpdateSelectedNote(NoteAppListBox.SelectedIndex);
                 UpdateListBox();
+                ProjectSerializer.SaveToFile(_project);
             }
             if ((NoteAppListBox.Items.Count != 0) && (currentIndex < NoteAppListBox.Items.Count))
             {
@@ -105,6 +108,7 @@ namespace NoteApp.View
                 ClearSelectedNote();
                 OutputByCategory();
                 UpdateListBox();
+                ProjectSerializer.SaveToFile(_project);
             }
             if ((NoteAppListBox.Items.Count != 0) && (currentIndex < NoteAppListBox.Items.Count))
             {
