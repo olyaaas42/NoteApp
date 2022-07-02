@@ -9,7 +9,7 @@ namespace NoteApp.Model
     // <summary> 
     /// Описывает заметку
     /// </summary> 
-    public class Note : ICloneable
+    public class Note: ICloneable
     {
         /// <summary>
         /// Название заметки. Ограничено 50 символами.
@@ -124,20 +124,6 @@ namespace NoteApp.Model
                 _modifiedTime = DateTime.Now;
             }
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="category"></param>
-        /// <param name="text"></param>
-        /// <param name="creationDate"></param>
-        /// <param name="lastModifiedTime"></param>
-        public Note(string name, NoteCategory category, string text,
-            DateTime creationDate, DateTime lastModifiedTime) =>
-            (_title, _category, _text, _creationDate, _modifiedTime)
-            = (name, category, text, creationDate, lastModifiedTime);
-
 
         /// <summary>
         /// Создает экземпляр заметки.
