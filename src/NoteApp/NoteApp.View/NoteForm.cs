@@ -68,12 +68,12 @@ namespace NoteApp.View
             }
         }
 
-
         /// <summary>
         /// Метод обновления формы.
         /// </summary>
         private void UpdateForm()
         {
+            CategoryComboBox.SelectedItem = Enum.GetName(typeof(NoteCategory), _noteCopy.Category);
             TitleTextBox.Text = _noteCopy.Title;
             CreatedDateTimePicker.Value = _noteCopy.CreateTime;
             ModifiedDateTimePicker.Value = _noteCopy.ModifiedTime;
@@ -85,6 +85,13 @@ namespace NoteApp.View
         /// </summary>
         private void UpdateNote()
         {
+            foreach (var category in Enum.GetValues(typeof(NoteCategory)))
+            {
+                if (CategoryComboBox.SelectedItem.ToString() == category.ToString())
+                {
+                    _noteCopy.Category = (NoteCategory)category;
+                }
+            }
             _noteCopy.Title = TitleTextBox.Text;
             _noteCopy.Text = NoteAppTextBox.Text;
         }
@@ -108,13 +115,13 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// Проверка на анличие ошибок в форме.
+        /// Проверка на наличие ошибок в форме.
         /// </summary>
         private bool CheckFormOnErrors()
         {
             if (_noteError != "")
             {
-                ///MessageBox.Show(_noteError);
+                MessageBox.Show(_noteError);
                 return false;
             }
             else
@@ -123,13 +130,13 @@ namespace NoteApp.View
             }
         }
 
-        /// <summary>
-        /// Завершение редактирования кнопкой OK.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OKButton_Click(object sender, EventArgs e)
+        private void OkButton_Click(object sender, EventArgs e)
         {
+            if (CategoryComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите категорию");
+                return;
+            }
             if (CheckFormOnErrors())
             {
                 UpdateNote();
@@ -139,11 +146,6 @@ namespace NoteApp.View
             }
         }
 
-        /// <summary>
-        /// Закрытие окна редактирования кнопкой cancel.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;

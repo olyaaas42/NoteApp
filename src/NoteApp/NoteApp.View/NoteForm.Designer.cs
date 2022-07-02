@@ -65,11 +65,18 @@ namespace NoteApp.View
             this.TitleTextBox.Name = "TitleTextBox";
             this.TitleTextBox.Size = new System.Drawing.Size(729, 22);
             this.TitleTextBox.TabIndex = 20;
-            this.TitleTextBox.Text = "БезНазвания";
             // 
             // CategoryComboBox
             // 
             this.CategoryComboBox.FormattingEnabled = true;
+            this.CategoryComboBox.Items.AddRange(new object[] {
+            "Work",
+            "Home",
+            "HealthAndSports",
+            "People",
+            "Documents",
+            "Finance",
+            "Other"});
             this.CategoryComboBox.Location = new System.Drawing.Point(88, 44);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(161, 24);
@@ -150,7 +157,6 @@ namespace NoteApp.View
             this.OKButton.TabIndex = 11;
             this.OKButton.Text = "ОК";
             this.OKButton.UseVisualStyleBackColor = true;
-            this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
             // contextMenuStrip1
             // 
